@@ -1,0 +1,90 @@
+
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+  <!--/ Intro Single star /-->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single"style="margin-top: 50px;" >User View..</h1>
+
+          </div>
+        </div>
+{#        <div class="col-md-12 col-lg-4">#}
+{#          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">#}
+{#            <ol class="breadcrumb">#}
+{#              <li class="breadcrumb-item">#}
+{#                <a href="index.html">Home</a>#}
+{#              </li>#}
+{#              <li class="breadcrumb-item active" aria-current="page">#}
+{#                Contact#}
+{#              </li>#}
+{#            </ol>#}
+{#          </nav>#}
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+  <!--/ Intro Single End /-->
+
+  <!--/ Contact Star /-->
+  <section class="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="contact-map box">
+{#            <div id="map" class="contact-map">#}
+{#              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834"#}
+{#                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>#}
+{#            </div>#}
+          </div>
+        </div>
+        <div class="col-sm-12 section-t8">
+          <div class="row">
+            <div class="col-md-7">
+              <div style=" border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;width: 1200px;
+   margin-top: 50px;">
+   <table class="table table-bordered table-striped table-hover" >
+
+<th class="info" style="background-color: lightgreen;">Name</th>
+<th class="info" style="background-color: lightgreen;">Mobile No</th>
+
+<th class="info" style="background-color: lightgreen;">Email</th>
+
+{#<th class="info" style="background-color: lightgreen;">Approve</th>#}
+
+<th class="info" style="background-color: lightgreen;">Reject</th>
+{% for dri in user_view  %}
+
+<tr>
+    <td>{{ dri.user.first_name}}</td>
+    <td>{{ dri.mobile}}</td>
+
+
+    <td>{{ dri.user.email}}</td>
+
+{#    <td><a href="approve?id={{ dri.user_id}}" class=" btn btn-success">Approve</a></td>#}
+{#    <td><a href="approve?id={{ dri.user_id}}" class=" btn btn-success">Approve</a></td>#}
+    <td><a href="reject?id={{ dri.user_id}}" class=" btn btn-danger">Reject</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+  <!--/ Contact End /-->
+
+  <!--/ footer Star /-->
